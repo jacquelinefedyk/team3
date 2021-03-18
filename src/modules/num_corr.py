@@ -1,3 +1,3 @@
-Hello darknes my old friend
-adsfasdf
-adsfasdf
+import numpy as np
+
+def 
