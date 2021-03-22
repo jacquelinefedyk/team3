@@ -3,6 +3,7 @@ from math import *
 import pandas as pd
 
 def rd_file(filedir,filename,threshold):
+    "Add an explanation here, variables and what it does"
     no_fl  = len(filename)
     path_f = filedir + filename[0]
     ptemp  = pd.read_csv(path_f, '\s+', header=None,skiprows=1)
