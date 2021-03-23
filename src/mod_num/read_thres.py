@@ -1,6 +1,7 @@
 from numpy import *
 from math import *
 import pandas as pd
+import numpy as np
 
 def rd_file(filedir,filename,threshold):
     "Add an explanation here, variables and what it does"
