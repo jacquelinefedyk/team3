@@ -1,4 +1,6 @@
 import numpy as np
+
+
 def euclidean_distance(list_ref, list_comp, vectors):
     """Calculates the Euclidean distance (L2 norm) between pairs of vectors.
     Args:
