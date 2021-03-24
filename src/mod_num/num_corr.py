@@ -3,7 +3,7 @@ import numpy as np
 from scipy.fftpack import fft, fftshift
 from numpy import *
 
-def num_crl(filedir,filename,threshold):
+def num_crl(filedir,filename):
     "Add explanation here"
     dat_nst=dat_nst.T
 
@@ -18,5 +18,5 @@ def num_crl(filedir,filename,threshold):
     ac_fc1=zeros([p_wf,t_wf+1],dtype=np.complex_)
     for n in range(p_wf):
         ac_fc1[n]=np.sum(comp_vc[:,0]*np.conjugate(comp_vc[:,n]))
-        
-    return
+
+    return ac_fc1
