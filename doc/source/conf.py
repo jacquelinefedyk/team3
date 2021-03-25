@@ -12,7 +12,7 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../src/mod_num/'))
+sys.path.insert(0, os.path.abspath('../../src/mod_stat_num/'))
 
 
 # -- Project information -----------------------------------------------------
