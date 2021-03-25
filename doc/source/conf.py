@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.abspath('../../src/mod_num/'))
 # -- Project information -----------------------------------------------------
 
 project = 'packages example'
-copyright = '2021, Johana A. Gomez'
-author = 'Johana A. Gomez'
+copyright = '2021, Jacqueline Fedyk, Johana A. Gomez'
+author = 'Jacqueline Fedyk & Johana A. Gomez'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
