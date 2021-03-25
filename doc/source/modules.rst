@@ -4,4 +4,7 @@ modules
 .. toctree::
    :maxdepth: 4
 
-   mod_stat_num
+   num_corr
+   plot_save
+   read_thres
+   stat_corr
