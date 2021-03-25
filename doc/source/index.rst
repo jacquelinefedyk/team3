@@ -3,8 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to packages example's documentation!
+Welcome to packages numerical and stadistical's documentation!
 ============================================
+readme
+installation
+license
+help
+modules
 
 .. toctree::
    :maxdepth: 2
