@@ -9,25 +9,52 @@ def num_crl(wf_n):
         wf_n(numpy array, complex): Wave function over time
 
     Returns:
-        numpy array, complex: The autocorrelataion function over time.
+        numpy array, complex: The wave function complex over time.
+        numpy array, complex: The autocorrelation function over time.
         numpy array, complex: The Discrete Fourier Transformation function over\
         frequency
     """
-    dat_nst=dat_nst.T
-    #setting up the time vector
-    t2_wf=len(dat_nst[:,0])
-    
-    t_wf=int(t2_wf/2)
-    p_wf=len(dat_nst[0])
+    #setting up the time vector and deleting it from array
+    time_vc = zeros([len(wf_n[0])])
+    time_vc = wf_n[0]
+    wf_n = np.delete(wf_n,[0],axis=0)
+    #the lenth of the vector
+    t_wf=len(wf_n[0])
+    p_wf=len(dat_nst[:,0])
+    # turning array into complex
+    comp_vc = zeros([p_wft,_wf],dtype=np.complex_)
+    for n in range(p_wf):
+        comp_vc[:,n]=wf_n[n*2] + wf_n[1+n*2]*1j
+    return comp_vc, time_vc
 
-    comp_vc=zeros([t_wf,p_wf],dtype=np.complex_)
-    for t in range(t_wf):
-        comp_vc[t]=dat_nst[t*2] + dat_nst[1+t*2]*1j
+def auto_corr(comp_vc):
+        """Function computes the autocorrelation function from given vectors
 
+        Args:
+            wf_n(numpy array, complex): Wave function over time
+
+        Returns:
+            numpy array, complex: The autocorrelation function over time.
+            frequency
+        """
+    # autocorrelation fuction
     ac_file=zeros([p_wf,t_wf+1],dtype=np.complex_)
     for n in range(p_wf):
         ac_file[n]=np.sum(comp_vc[:,0]*np.conjugate(comp_vc[:,n]))
+    return ac_file
 
+def FFT_wf(ac_file):
+    """Function computes the autocorrelation function from given vectors
+    and the Discrete Fourier transform
+
+    Args:
+        ac_file(numpy array, complex): Autocorrelation function form the\
+        Wave function over time
+
+    Returns:
+        numpy array, complex: The Discrete Fourier Transformation function over\
+        frequency
+    """
     FT_file = fft.fft(ac_file)
     FT_t  = fft.fftfreq(len(ac_file))
-    return ac_file , FT_file , FT_t
+    return  FT_file , FT_t
