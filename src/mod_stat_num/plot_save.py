@@ -1,6 +1,6 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 def plot_save(xval_col_name,dataframe,path):
     """ Creates plots of the columns of a dataframe and saves them.
@@ -11,7 +11,6 @@ def plot_save(xval_col_name,dataframe,path):
 
     Result:
     save: For each column a plot is generated and saved as pdf."""
-
 
     plot = sns.pairplot(dataframe,x_vars=xval_col_name,height = 5)
     save = plt.savefig(os.path.join(path,str(dataframe)+'.pdf'))
