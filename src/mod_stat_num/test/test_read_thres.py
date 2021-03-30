@@ -1,5 +1,5 @@
 import numpy as np
-import panda as pd
+import pandas as pd
 import read_thres as thrs
 
 
