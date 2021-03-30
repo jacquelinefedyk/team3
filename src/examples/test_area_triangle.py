@@ -1,6 +1,6 @@
 import unittest
-import numpy as np
 import area_triangle as trA
+
 
 class test_area_triangle(unittest.TestCase):
     def test_area_tr(self):
@@ -9,7 +9,6 @@ class test_area_triangle(unittest.TestCase):
         self.assertEqual(trA.area_tr(8,6),24)
         self.assertEqual(trA.area_tr(8,3),12)
         self.assertNotEqual(trA.area_tr(3,3),10)
-
 
     def test_values(self):
         """Make sure value errors are not negative"""

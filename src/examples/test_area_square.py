@@ -1,5 +1,4 @@
 import unittest
-import numpy as np
 import area_square as ars
 
 
