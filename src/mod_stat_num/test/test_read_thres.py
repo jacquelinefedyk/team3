@@ -4,7 +4,7 @@ import read_thres as thrs
 
 
 def check_thr():
-    file1 = pd.read_csv(name_p, r'\s+', header=None,skiprows=1)
+    file1 = pd.read_csv('./test/test_file.csv', r'\s+', header=None,skiprows=1)
     fl_try = file1[0].values
     return fl_try
 
