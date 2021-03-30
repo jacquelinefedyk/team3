@@ -4,7 +4,8 @@ import pandas as pd
 import numpy as np
 
 def rd_file(filedir,filename):
-    "Add an explanation here, variables and what it does"
+    """Add an explanation here, variables and what it does
+    """
     path_f = filedir + filename
     ptemp1 = pd.read_csv(path_f, '\s+', header=None,skiprows=1)
     fl     = ptemp1[0].values
