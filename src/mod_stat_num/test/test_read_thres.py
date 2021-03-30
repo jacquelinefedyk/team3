@@ -4,12 +4,23 @@ import read_thres as thrs
 
 
 def check_thr():
-    file1 = pd.read_csv('./test/test_file.csv', r'\s+', header=None,skiprows=1)
-    fl_try = file1[0].values
+    path_f1 ='./test/test_file.csv'
+    pt1 = pd.read_csv(path_f1, r'\s+', header=None,skiprows=1)
+    fl1 = pt1[0].values
+    no_fl1 = len(fl1)
+
+    cl1 = open(path_f1, "r").readlines()
+    line1 = cl1[1].split()
+    no_cl1 = len(line1)
+
+    fl_try = np.zeros((no_cl1,no_fl1))
+    for i in range(no_cl1):
+        pt2 = pd.read_csv(path_f1, r'\s+', header=None,skiprows=1)
+        fl_try[i] = pt2[i].values
     return fl_try
 
 
-def test_thr(fl_try):
+def test_thr(check_thr):
     data, x = thrs.ths_def(check_thr, threshd=1.E-4)
     dat_nw = check_thr.drop(columns=["norm", "<x>", "<y>"])
     x_nw = dat_nw.columns.values
