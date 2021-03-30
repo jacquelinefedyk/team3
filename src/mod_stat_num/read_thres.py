@@ -6,7 +6,7 @@ def rd_file(filedir,filename):
     """Add an explanation here, variables and what it does
     """
     path_f = filedir + filename
-    ptemp1 = pd.read_csv(path_f, '\s+', header=None,skiprows=1)
+    ptemp1 = pd.read_csv(path_f, r'\s+', header=None,skiprows=1)
     fl = ptemp1[0].values
     no_fl = len(fl)
 
@@ -16,7 +16,7 @@ def rd_file(filedir,filename):
 
     fl_exp = np.zeros((no_cl,no_fl))
     for i in range(no_cl):
-        ptemp2 = pd.read_csv(path_f, '\s+', header=None,skiprows=1)
+        ptemp2 = pd.read_csv(path_f, r'\s+', header=None,skiprows=1)
         fl_exp[i] = ptemp2[i].values
     return fl_exp
 
