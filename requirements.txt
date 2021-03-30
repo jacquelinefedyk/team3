@@ -5,4 +5,3 @@ pytest
 sphinx
 recommonmark
 flake8
-linter
