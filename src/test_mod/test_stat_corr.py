@@ -1,6 +1,3 @@
 import pytest
-import numpy
-
-class build_wf:
-        def __int__(self, dim1,dim2):
-            
+import numpy as np
+import stat_corr as sc
