@@ -31,4 +31,4 @@ def corr_matrix(dataframe, xval_col_name):
     dataframe_corr = dataframe_corr.iloc[numb_val]  #only values belonging to the position of nonzero values
     return dataframe_corr
 
-if __name__ == "__main__":
+#if __name__ == "__main__":

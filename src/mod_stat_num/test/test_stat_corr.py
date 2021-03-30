@@ -1,7 +1,7 @@
 import pytest
 import pandas as pd
 import numpy as np
-import stat_corr as sc
+from mymodules import stat_corr as sc
 
 
 class build_df:
@@ -38,7 +38,7 @@ class build_df:
         return self.data
 
 
-
+@pytest.fixture(scope='module')
 def get_df():
     obj = build_df('/tmpa/jacqueline/team3/data/npop.t')
     data = obj.read_df()
@@ -47,7 +47,7 @@ def get_df():
 
 
 
-def test_corr_matrix(get_df, 'time'):
+def test_corr_matrix(get_df):
     corrmat = sc.corr_matrix(get_df, 'time')
     d = [-0.962895, -0.951326, 0.923856, -0.920366, 0.914762, -0.911385,
          0.906915, -0.904690, -0.816567, -0.812710, -0.775375, 0.769862,
