@@ -30,3 +30,5 @@ def corr_matrix(dataframe, xval_col_name):
     numb_val = dataframe_corr.to_numpy().nonzero() #position of nonzero entries
     dataframe_corr = dataframe_corr.iloc[numb_val]  #only values belonging to the position of nonzero values
     return dataframe_corr
+
+if __name__ == "__main__":
