@@ -20,8 +20,6 @@ def get_df():
     return data
 
 
-
-
 def test_corr_matrix(get_df, xval_col_name):
     corrmat = sc.corr_matrix(get_df, xval_col_name)
     corrmat = corrmat.dropna().round(decimals=6)
