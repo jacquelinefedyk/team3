@@ -37,5 +37,5 @@ jobs:
       run: flake8
     - name: Run pytest
       run: |
-        cd src
+        cd src/mod_stat_num
         python -m pytest
